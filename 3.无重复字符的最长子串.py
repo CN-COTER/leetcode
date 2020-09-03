@@ -23,5 +23,30 @@ class Solution:
 
 
 
+'''
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if not s:
+            return 0
+        a = {}
+        tmp_str = ''
+        max_length = -1 * float("inf")
+
+        for i in range(len(s)):
+            
+            if (s[i] not in a.keys()) or (s[i] not in tmp_str) :
+                a[s[i]] = i
+                tmp_str += s[i]
+                max_length = max(max_length, len(tmp_str))
+
+            else:
+                
+                last_i_index = a[s[i]]
+                tmp_str = s[last_i_index+1:i+1]
+                a[s[i]] = i
+ 
+        return max_length
+'''
+
 # @lc code=end
 
